@@ -2,6 +2,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+typedef	struct Node
+{
+	int		valor;
+	struct	Node *prox;
+}			Node;
+
+Node* criarNo(int valor)
+{
+	Node* nov
+}
 int	ft_atoi(const char *str)
 {
 	int	number;
@@ -34,26 +44,25 @@ int	ft_atoi(const char *str)
 	return (number);
 }
 
-int ft_mmc(int number_1, int number_2)
+int ft_mdc(int number_1, int number_2)
 {
 	int		div;
 	int		find;
+	int		*div;
 
 	div = 2;
 	find = 0;
-	while (find == 0)
-	{
-		if ((number_1 % div == 0) && (number_2 % div == 0))
-		{
-			find = 1;
-		}
-		else
-		{
-			div += 1;
-		}
-	}
 
+	if ((number_1 % div == 0) && (number_2 % div == 0))
+	{
+		div = 
+		find = 1;
+	}
+	else
+		div += 1;
+	return (div);
 }
+
 int main(int argc, char *argv[])
 {
 	int		number_1;
@@ -65,11 +74,11 @@ int main(int argc, char *argv[])
 		number_1 = ft_atoi(argv[1]);
 		number_2 = ft_atoi(argv[2]);
 		result = ft_mmc(number_1, number_2);
-		return (result);
+		printf("%d",result);
 	}
 	else
 	{
-		write(1, "\n", 1);
+		printf("\n");
 	}
 	return (0);
 }
