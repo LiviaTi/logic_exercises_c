@@ -2,40 +2,32 @@
 
 int main(int argc, char *argv[])
 {
-	char	*str;
+	char *arg;
 	int		i;
+	char letter;
 
 	i = 0;
 	if (argc == 2)
 	{
-		str = argv[1];
-		while (str[i] != '\0')
+		arg = argv[1];
+		while (arg[i] != '\0')
 		{
-			if ((str[i] >= 'a' &&  str[i] <= 'm') || (str[i] >= 'A' &&  str[i] <= 'M'))
+			if ((arg[i] >= 'a' && arg[i]<= 'm') || (arg[i] >= 'A' && arg[i]<= 'M'))
 			{
-				str[i] += 13;
-				write(1, &str[i], 1);
+				letter = arg[i] + 13;
 			}
-			else if ((str[i] >= 'n' &&  str[i] <= 'z') || (str[i] >= 'N' &&  str[i] <= 'Z'))
+			else if((arg[i] >= 'm' && arg[i]<= 'z') || (arg[i] >= 'M' && arg[i]<= 'Z'))
 			{
-				str[i] -= 13;
-				write(1, &str[i], 1);
+				letter = arg[i] - 13;
 			}
 			else
 			{
-				write(1, &str[i], 1);
+				letter = arg[i];
 			}
+			write(1, &letter, 1);
 			i++;
 		}
-		if (str[i]=='\0')
-		{
-			write(1, "\n", 1);
-			return(0);
-		}
 	}
-	else
-	{
-		write(1,"\n",1);
-	}
+	write (1, "\n", 1);
 	return (0);
 }
