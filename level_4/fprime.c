@@ -37,26 +37,12 @@ $
 #include <stdio.h>
 #include <stdlib.h>
 
-int is_prime(int n)
-{
-	int i;
-	i = 2;
-	if (n < 2)
-		return (0);
-	while (i * i <= 0)
-	{
-		if (n % i == 0)
-			return (0);
-		i++;
-	}
-	return (1);
-}
+
 int main(int argc, char *argv[])
 {
-	int	num;
+	int num;
 	int i;
 
-	num = 0;
 	if (argc == 2)
 	{
 		num = atoi(argv[1]);
@@ -71,12 +57,12 @@ int main(int argc, char *argv[])
 			if (num % i == 0)
 			{
 				printf("%d",i);
-				num /= i;
+				num = num / i;
 				if (num > 1)
-					printf("*");
+						printf("*");
 			}
 			else
-				i++;
+				i++;	
 		}
 	}
 	printf("\n");
