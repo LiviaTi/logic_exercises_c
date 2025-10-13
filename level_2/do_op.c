@@ -32,7 +32,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-
 void	ft_putchar(char c)
 {
 	write (1, &c, 1);
@@ -40,9 +39,14 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int n)
 {
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n *= -1;
+	}
 	if (n >= 10)
 		ft_putnbr(n / 10);
-	ft_putchar((n % 10) - '0');
+	ft_putchar((n % 10) + '0');
 }
 
 int main (int argc, char *argv[])
@@ -60,18 +64,18 @@ int main (int argc, char *argv[])
 		num_2 = atoi(argv[3]);
 		operation = argv[2];
 
-		if (operation == '*')
+		if (*operation == '*')
 			result = num_1 * num_2;
-		else if (operation == "/")
+		else if (*operation == '/')
 			result = num_1 / num_2;
-		else if (operation == '+')
+		else if (*operation == '+')
 			result = num_1 + num_2;
-		else if (operation == '-')
+		else if (*operation == '-')
 			result = num_1 - num_2;
-		else if (operation == '%')
+		else if (*operation == '%')
 			result = num_1 % num_2;
 		
-		
+		ft_putnbr(result);
 	}
 	write (1, "\n", 1);
 	return (0);
