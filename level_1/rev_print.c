@@ -30,7 +30,7 @@ int		ft_strlen(char *str)
 	{
 		i++;
 	}
-	return (i)
+	return (i);
 }
 
 int main (int argc, char *argv[])
@@ -44,8 +44,8 @@ int main (int argc, char *argv[])
 	if (argc == 2)
 	{
 		arg = argv[1];
-		size = ft_strlen(arg);
-		while (size > 0)
+		size = ft_strlen(arg) - 1;
+		while (size >= 0)
 		{
 			write(1, &arg[size], 1);
 			size--;
