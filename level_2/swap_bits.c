@@ -6,7 +6,7 @@ unsigned char	swap_bits(unsigned char octet)
 
 	left = (octet & 0xF0) >> 4;
 	right = (octet & 0x0F) << 4;
-	return (left |right);
+	return ((octet >> 4 | octet << 4));
 }
 
 #include <stdio.h>
