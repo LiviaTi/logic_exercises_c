@@ -16,13 +16,18 @@ int		ft_strcmp(char *s1, char *s2)
 	int		i;
 
 	i = 0;
-	while (s1[i])
+	while (s1[i] && s1[i] == s2[i])
 	{
-		if (s1[i] < s2[i])
-			return(-1);
-		if (s1[i] > s2[i])
-			return(1);
 		i++;
 	}
-	return (0);
+	return (s1[i] - s2[i]);
 }
+/*
+#include <stdio.h>
+int main()
+{
+	printf("\n%d", ft_strcmp("abc","abc"));
+	printf("\n%d", ft_strcmp("ab","abc"));
+	printf("\n%d", ft_strcmp("abc","ab"));
+}
+*/
