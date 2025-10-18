@@ -44,11 +44,11 @@ void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 		{
 			tmp = curr;
 			if (prev)
-				prev-next = curr->next;
+				prev->next = curr->next;
 			else
 				*begin_list = curr->next;
 			curr = curr->next;
-			free(tmp;)
+			free(tmp);
 		}
 		else
 		{
